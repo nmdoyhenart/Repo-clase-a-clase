@@ -16,9 +16,7 @@ Menú:
 Todo el desarrollo tiene que estar modularizado: ingreso de datos, validaciones de líneas y coches, generación y verificación de existencia de legajo, cálculos, etc.
 """
 from os import system
-import random
-
-legajo = random.randint(1000,2000)
+from planilla_y_legajos import *
 
 lineas = [[160, 74, 79],
           [1,2,3,4,5]]
@@ -41,47 +39,55 @@ recaudacion_matriz = []
 # for fila in legajos:
 #     print(fila)
 
-
+# legajos_generados = generar_legajos(5)
 bandera_ingreso = True
 while bandera_ingreso:
     opcion = int(input("""1-Cargar planilla.\n2-Mostrar la recaudación de todos los coches y lineas.\n3-Calcular y mostrar la recaudación por coche\n4-Calcular y mostrar la recaudación total.\n5-Salir\nElija una opcion: """))
 
     match opcion:
             case 1:
-                while True:
-                    linea = int(input("Ingrese la línea de colectivo que maneja: "))
-                    if linea == 160 or linea == 74 or linea == 79:
-                        break
-                    else:
-                        print("ERROR, línea inválida")
+                cargar_planilla(legajos,colectivos)
+                # print(legajos_generados)
+                # while True:
+                #         ingresar_legajo = (int(input("Ingrese su numero legajo: ")))
+                #         if ingresar_legajo == legajos_generados:
+                #             break
+                #         else:
+                #             print("ERROR, ingrese un legajo existente.")
                 
-                while True:
-                    coche = int(input("Ingrese el coche que maneja: "))
-                    if coche == 1 or coche == 2 or coche == 3 or coche == 4 or coche == 5:
-                        break
-                    else:
-                        print("ERROR, coche invalido")
+                # while True:
+                #         linea = int(input("Ingrese la línea de colectivo que maneja: "))
+                #         if linea == 160 or linea == 74 or linea == 79:
+                #             break
+                #         else:
+                #             print("ERROR, línea inválida")
                 
-                print(f"Este es su numero de legajo: {legajo}")
+                # while True:
+                #     coche = int(input("Ingrese el coche que maneja: "))
+                #     if coche == 1 or coche == 2 or coche == 3 or coche == 4 or coche == 5:
+                #         break
+                #     else:
+                #         print("ERROR, coche invalido")
 
-                while True:
-                    recaudacion = float(int(input("Ingrese la recaudacion del dia: ")))
-                    if recaudacion > 1:
-                        break
-                    else:
-                        print("ERROR, reingrese un valor valido.")
-                    
-                    recaudacion = recaudacion_matriz
-                
+                # while True:
+                #     recaudacion = float(int(input("Ingrese la recaudacion del dia: ")))
+                #     if recaudacion > 1:
+                #         break
+                #     else:
+                #         print("ERROR, reingrese un valor valido.")
+
+                # recaudacion = recaudacion_matriz
             case 2:
                 print("Recaudación de coches y lineas")
             case 3:
                 print("Recaudación por coche")
             case 4:
                 print("Recaudación total")
+                # recaudacion += recaudacion
+                print(f"La recaudacion total es:")
             case 5:
                 print("Saliendo del programa..")
-                break
+                bandera_ingreso = False
 
 system("pause")
 system("cls")

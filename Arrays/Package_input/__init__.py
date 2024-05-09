@@ -1,0 +1,1 @@
+from Package_input import get_string

@@ -2,8 +2,7 @@
 Nombre: Nicolás
 Apellido: Doyhenart
 
-Escribir una función que reciba como parámetros una lista de enteros y muestre 
-la/las posiciones en donde se encuentra el valor máximo hallado.
+Escribir una función que reciba como parámetros una lista de enteros y retorne la posición del valor máximo encontrado
 """
 def valores_max(lista : list):
     num_max = 0
@@ -22,7 +21,7 @@ def valores_max(lista : list):
             posiciones_max.append(a)
     return posiciones_max
 
-lista = [5, 10, 2, 10, 2, 10]
+lista = [0,2,3,10,4,10,5,20]
 posiciones = valores_max(lista)
 print(posiciones)
 
