@@ -1,0 +1,21 @@
+{
+    "Personas": [
+        {
+            "Nombre": "Juan",
+            "Edad": 32
+        },
+        {
+            "Nombre": "Carlos",
+            "Edad": 72
+        },
+        {
+            "Nombre": "Aquiles",
+            "Edad": 18
+        },
+        {
+            "Nombre": "Joan",
+            "Edad": 18
+        }
+    ],
+    "Producto": "Sprite 2.75lts"
+}
