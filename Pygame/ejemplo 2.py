@@ -32,7 +32,7 @@ texto = ""
 flag_run = True
 
 while flag_run:
-    for evento in pygame.event.get():   
+    for evento in pygame.event.get():
         if evento.type == pygame.QUIT:
             flag_run = False
         elif evento.type == pygame.KEYDOWN:
@@ -43,18 +43,13 @@ while flag_run:
                     texto = ""
                 else:
                     texto += evento.unicode
-                    
         elif evento.type == pygame.MOUSEBUTTONDOWN:
             if input.collidepoint(evento.pos):
                 activo = not activo
-            
-            if activo:
-                color = color_activo
-            else:
-                color = color_inactivo
+            color = color_activo if activo else color_inactivo
             
     ventana_ppa1.fill(BLANCO)
-    texto_superficie = fuente.render(texto, ROJO, NEGRO)
+    texto_superficie = fuente.render(texto, False, NEGRO)
 
     ventana_ppa1.blit(texto_superficie, (input.x + 5, input.y + 5))
     pygame.draw.rect(ventana_ppa1, color, input, 2)
